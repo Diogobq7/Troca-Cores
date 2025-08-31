@@ -85,6 +85,7 @@ function handleUserClick(e) {
   const currentStep = userSequence.length - 1;
   if(userSequence[currentStep] !== sequence[currentStep]) {
     alert(`Errou! Você chegou ao nível ${level}\nPontuação: ${score.textContent}\nTente novamente!`);
+    startBtn.textContent = "Reiniciar";
     sequence = [];
     level = 0;
     score.textContent = 0;
@@ -95,15 +96,22 @@ function handleUserClick(e) {
 
   if(userSequence.length === sequence.length) {
     score.textContent = level;
-    setTimeout(nextLevel, 1000);
+    status.textContent = `Você completou o nível ${level}`;
+    startBtn.textContent = "Proximo Nível";
+
+    isPlaying = false;
   }
 }
 
 // Eventos
 buttons.forEach(btn => btn.addEventListener('click', handleUserClick));
 startBtn.addEventListener('click', () => {
-  sequence = [];
-  score.textContent = 0;
-  isPlaying = true;
-  nextLevel();
+   if (!isPlaying) {
+    isPlaying = true;
+    if (level === 0) {
+      sequence = [];
+      score.textContent = 0;
+    }
+    nextLevel();
+  }
 });
