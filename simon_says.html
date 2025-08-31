@@ -22,14 +22,19 @@
     </nav>
     <div class="container-simon">
           <h1>Simon Says - Cores</h1>
+          <h4>Acompanhe a sequência de cores</h4>
           <div id="color-buttons">
-        <button class="color-btn" data-color="#FF0000" style="background:#FF0000"></button>
-        <button class="color-btn" data-color="#00FF00" style="background:#00FF00"></button>
-        <button class="color-btn" data-color="#0000FF" style="background:#0000FF"></button>
-        <button class="color-btn" data-color="#FFFF00" style="background:#FFFF00"></button>
+        <button class="color-btn red" data-color="#FF0000" style="background:#FF0000"></button>
+        <button class="color-btn green" data-color="#00FF00" style="background:#00FF00"></button>
+        <button class="color-btn blue" data-color="#0000FF" style="background:#0000FF"></button>
+        <button class="color-btn yellow" data-color="#FFFF00" style="background:#FFFF00"></button>
+        <div id="center-hole"></div>
           </div>
           <p id="status">Clique em "Iniciar" para jogar</p>
           <button class="btn btn-hero" id="start-btn">Iniciar</button>
+          <div id="score-container">
+              Pontuação: <span id="score">0</span>
+          </div>
     </div>
 
   <script src="simon.js"></script>

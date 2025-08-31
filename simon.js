@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll('.color-btn');
 const startBtn = document.getElementById('start-btn');
 const status = document.getElementById('status');
+const score = document.getElementById('score');
 
 let sequence = [];
 let userSequence = [];
@@ -50,11 +51,13 @@ function handleUserClick(e) {
     alert(`Errou! Você chegou ao nível ${level}`);
     sequence = [];
     level = 0;
+    score.textContent = 0;
     status.textContent = "Clique em 'Iniciar' para jogar novamente";
     return;
   }
 
   if(userSequence.length === sequence.length) {
+    score.textContent = level;
     setTimeout(nextLevel, 1000);
   }
 }
