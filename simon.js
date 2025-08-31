@@ -84,7 +84,7 @@ function handleUserClick(e) {
 
   const currentStep = userSequence.length - 1;
   if(userSequence[currentStep] !== sequence[currentStep]) {
-    alert(`Errou! Você chegou ao nível ${level}`);
+    alert(`Errou! Você chegou ao nível ${level}\nPontuação: ${score.textContent}\nTente novamente!`);
     sequence = [];
     level = 0;
     score.textContent = 0;
